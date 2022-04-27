@@ -1,0 +1,14 @@
+@import "../../style/global.scss";
+
+
+.navbar {
+    background-color: $main-black;
+    font-size: $nav-link-font-size;
+    .nav-link {
+        color: $main-white !important;
+    }
+}
+
+.navbar-toggler-icon {
+    background-color: $main-white;
+}
