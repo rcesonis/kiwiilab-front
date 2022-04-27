@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Homepage from "./pages/Homepage/Homepage";
 import Products from "./components/Products/Products";
 import SignUp from "./pages/SignUp/SignUp";
+import SignIn from "./pages/SignIn/SignIn";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,9 +15,8 @@ function App() {
         <Route path="/products" element={<Products />} />
         {/* <Route path="/products/:id" element={<ProductDetail />} /> */}
         <Route path="/signup" element={<SignUp />} />
-        {/* <Route path="/signin" element={<Login />} /> */}
+        <Route path="/signin" element={<SignIn />} />
       </Routes>
-      <Homepage />
     </div>
   );
 }

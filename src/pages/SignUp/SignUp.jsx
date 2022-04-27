@@ -1,42 +1,46 @@
 import React from "react";
 import "./SignUp.scss";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 const SignUp = () => {
   return (
     <main class="page vh-100 py-5 registration-page">
-      <section class="clean-block clean-form dark">
-        <div class="container">
-          <div class="block-heading pb-5">
-            <h2 class="text-info">Registration</h2>
+      <section className="clean-block clean-form dark">
+        <div className="container">
+          <div className="block-heading pb-5">
+            <h2 className="text-info">Registration</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam
               urna, dignissim nec auctor in, mattis vitae leo.
             </p>
           </div>
-          <form className="py-5">
-            <div class="mb-3">
-              <label class="form-label" for="name">
+          <Form className="py-5">
+            <div className="mb-3">
+              <label className="form-label" for="name">
                 Name
               </label>
-              <input class="form-control item" type="text" id="name" />
+              <input className="form-control item" type="text" id="name" />
             </div>
-            <div class="mb-3">
-              <label class="form-label" for="password">
+            <div className="mb-3">
+              <label className="form-label" for="password">
                 Password
               </label>
-              <input class="form-control item" type="password" id="password" />
+              <input
+                className="form-control item"
+                type="password"
+                id="password"
+              />
             </div>
-            <div class="mb-3">
-              <label class="form-label" for="email">
+            <div className="mb-3">
+              <label className="form-label" for="email">
                 Email
               </label>
-              <input class="form-control item" type="email" id="email" />
+              <input className="form-control item" type="email" id="email" />
             </div>
-            <button class="btn btn-primary" type="submit">
+            <Button className="btn btn-primary" type="submit">
               Sign Up
-            </button>
-          </form>
+            </Button>
+          </Form>
         </div>
       </section>
     </main>
