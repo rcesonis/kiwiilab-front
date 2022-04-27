@@ -1,19 +1,14 @@
 import React from "react";
 import "./Navigation.scss";
-import {
-  Container,
-  Navbar,
-  Nav,
-  Button,
-  Form,
-  FormControl,
-} from "react-bootstrap";
+import { Container, Navbar, Nav } from "react-bootstrap";
 import logo from "../../assets/logo.png";
 const Navigation = () => {
   return (
     <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">
+          <img src={logo}></img>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll" className="justify-content-end">
           <Nav
@@ -25,10 +20,10 @@ const Navigation = () => {
             <Nav.Link href="#action2">Link</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
             <Nav.Link href="#action2">
-              <i class="las la-shopping-cart"></i>
+              <i className="las la-shopping-cart"></i>
             </Nav.Link>
             <Nav.Link href="#action2">
-              <i class="las la-user-circle"></i>
+              <i className="las la-user-circle"></i>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
