@@ -16,7 +16,7 @@ const Navigation = () => {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
+            {/* <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
             <Nav.Link href="#action2">
@@ -24,7 +24,7 @@ const Navigation = () => {
             </Nav.Link>
             <Nav.Link href="#action2">
               <i className="las la-user-circle"></i>
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Container>

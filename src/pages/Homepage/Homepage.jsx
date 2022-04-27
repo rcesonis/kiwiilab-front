@@ -5,8 +5,7 @@ import Products from "../../components/Products/Products";
 const Homepage = () => {
   return (
     <main>
-      <Hero />
-      <Products />
+      <h1>Homepage</h1>
     </main>
   );
 };
