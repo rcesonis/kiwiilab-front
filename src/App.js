@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/Navigation/Navigation";
 import Homepage from "./pages/Homepage/Homepage";
-import Products from "./components/Products/Products";
 import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
+import Products from "./pages/Products/Products";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
