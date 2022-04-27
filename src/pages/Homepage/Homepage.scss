@@ -1,1 +1,38 @@
 @import "../../style/global.scss";
+
+.main-heading {
+    font-size: 4rem;
+    font-family: $headings-font-family;
+}
+
+.main-heading_small {
+    font-size: 2rem;
+    font-family: $headings-font-family_small;
+}
+
+.heading-container {
+    background-color: black;
+    height: 40rem;
+    color: $main-white;
+    width: 80rem;
+}
+
+.heading-picture-container {
+    height: 62.5rem;
+    width: 84rem;
+    z-index: -1;
+    margin-left: -12rem;
+}
+
+.button-red {
+    background-color: $main-red!important;
+    width: 14rem;
+    height: 2.2rem;
+    color: $main-white;
+    border-radius: 0px!important;
+    font-family: $headings-font-family_small;
+}
+
+.button-red:hover {
+    background-color: $main-red-hover!important;
+}

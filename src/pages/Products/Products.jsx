@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -16,6 +17,8 @@ const Products = () => {
     };
     getProducts();
   }, []);
+
+  console.log(products.products);
 
   return (
     <main className="page catalog-page">
@@ -48,12 +51,17 @@ const Products = () => {
                                   </Link>
                                   <a href="#"></a>
                                 </div>
-                                <div className="product-name">
+                                <div className="product-name text-center">
                                   <a href="#">{product.title}</a>
                                 </div>
-                                <div className="about">
+                                <div className="about text-center">
                                   <div className="price">
-                                    <h3>{product.price}</h3>
+                                    <h3>{product.price}Eur</h3>
+                                  </div>
+                                  <div className="price">
+                                    <Button href={`/products/${product._id}`}>
+                                      View more
+                                    </Button>
                                   </div>
                                 </div>
                               </div>
