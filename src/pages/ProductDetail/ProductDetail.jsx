@@ -11,6 +11,8 @@ const ProductDetail = () => {
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
 
+  const [quantity, setQuantity] = useState(1);
+
   useEffect(() => {
     const getProduct = async () => {
       try {
@@ -21,7 +23,13 @@ const ProductDetail = () => {
     getProduct();
   }, [id]);
 
-  const clickHandler = () => {};
+  const handleQuantity = (addRemove) => {
+    if (addRemove === "add") {
+      quantity > 1 && setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
 
   console.log(product);
   return (
@@ -43,13 +51,15 @@ const ProductDetail = () => {
                     <div class="price">
                       <h3>{product.price} Eur</h3>
                     </div>
-                    <button
-                      onClick={clickHandler}
-                      className="button-red"
-                      type="button"
-                    >
-                      <i class="icon-basket"></i>Add to Cart
-                    </button>
+                    <div>
+                      <button onClick={() => handleQuantity("add")}>
+                        <i class="las la-plus"></i>
+                      </button>
+                      <span className="px-3"> {quantity} </span>
+                      <button onClick={() => handleQuantity("minus")}>
+                        <i class="las la-minus"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

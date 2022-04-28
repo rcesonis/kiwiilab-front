@@ -4,6 +4,7 @@ import background from "../../assets/shaving-tools-on-black-and-white.png";
 import background1 from "../../assets/background1.png";
 import { Button } from "react-bootstrap";
 import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
+import VideoComponent from "../../components/VideoComponent/VideoComponent";
 
 const Homepage = () => {
   return (
@@ -44,7 +45,7 @@ const Homepage = () => {
       </section>
       <FeaturedProduct />
       <section>
-        <div className="container-fluid py-5">
+        <div className="container-fluid pt-5">
           <div className="row g-0">
             <div className="col-6">
               <img src={background1} />
@@ -68,6 +69,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+      <VideoComponent />
     </main>
   );
 };
