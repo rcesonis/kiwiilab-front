@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <Navbar expand="lg">
       <Container>
-        <Navbar.Brand href="#">
+        <Navbar.Brand href="/">
           <img src={logo}></img>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -17,7 +17,7 @@ const Navigation = () => {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
-            {/* <Nav.Link href="#action2">Link</Nav.Link> */}
+            <Nav.Link href="/products">Shop</Nav.Link>
             {/* <Nav.Link href="#action2">Link</Nav.Link> */}
             {/* <Nav.Link href="#action2"> */}
             {/* <i className="las la-shopping-cart"></i> */}

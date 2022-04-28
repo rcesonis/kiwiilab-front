@@ -1,6 +1,7 @@
 import React from "react";
 import "./Homepage.scss";
 import background from "../../assets/shaving-tools-on-black-and-white.png";
+import background1 from "../../assets/background1.png";
 import { Button } from "react-bootstrap";
 import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
 
@@ -42,6 +43,31 @@ const Homepage = () => {
         </div>
       </section>
       <FeaturedProduct />
+      <section>
+        <div className="container-fluid py-5">
+          <div className="row g-0">
+            <div className="col-6">
+              <img src={background1} />
+            </div>
+            <div className="col-6">
+              <div className="description-container d-flex align-items-md-center justify-content-md-center">
+                <div className="text-container">
+                  <h1 className="main-heading_second">
+                    Kiwiilab - products for the modern man
+                  </h1>
+                  <p className="main-heading_small mt-3">
+                    Our high quality razors will create a totally different
+                    shaving experience.
+                  </p>
+                  <Button className="button-red  mt-3" href={`/products`}>
+                    Explore our products
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 };
