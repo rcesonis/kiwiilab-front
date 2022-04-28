@@ -21,6 +21,8 @@ const ProductDetail = () => {
     getProduct();
   }, [id]);
 
+  const clickHandler = () => {};
+
   console.log(product);
   return (
     <main class="page product-page">
@@ -41,7 +43,11 @@ const ProductDetail = () => {
                     <div class="price">
                       <h3>{product.price} Eur</h3>
                     </div>
-                    <button className="button-red" type="button">
+                    <button
+                      onClick={clickHandler}
+                      className="button-red"
+                      type="button"
+                    >
                       <i class="icon-basket"></i>Add to Cart
                     </button>
                   </div>
