@@ -2,19 +2,9 @@ import React from "react";
 import "./Homepage.scss";
 import background from "../../assets/shaving-tools-on-black-and-white.png";
 import { Button } from "react-bootstrap";
+import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
 
 const Homepage = () => {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const res = await axios.get(`${apiUrl}/products`);
-        setProducts(res.data);
-      } catch (err) {}
-    };
-    getProducts();
-  }, []);
   return (
     <main>
       <section>
@@ -51,6 +41,7 @@ const Homepage = () => {
           </div>
         </div>
       </section>
+      <FeaturedProduct />
     </main>
   );
 };
