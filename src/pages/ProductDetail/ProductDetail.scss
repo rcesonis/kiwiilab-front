@@ -9,8 +9,11 @@
     font-family: $headings-font-family_small;
 }
 
-.price {
+.price h3 {
     color: $main-price-color;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: $headings-font-family_small;
 }
 
 .description-container {
@@ -22,4 +25,11 @@
 .description-container .text-container {
     width: 50%;
     color: $main-white
+}
+
+.quantity h3 {
+    font-family: $headings-font-family_small;;
+    font-weight: 700;
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
 }

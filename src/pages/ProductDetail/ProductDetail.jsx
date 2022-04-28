@@ -24,7 +24,7 @@ const ProductDetail = () => {
   }, [id]);
 
   const handleQuantity = (addRemove) => {
-    if (addRemove === "add") {
+    if (addRemove === "minus") {
       quantity > 1 && setQuantity(quantity - 1);
     } else {
       setQuantity(quantity + 1);
@@ -51,14 +51,19 @@ const ProductDetail = () => {
                     <div class="price">
                       <h3>{product.price} Eur</h3>
                     </div>
+                    <div class="quantity my-2">
+                      <h3>Quantity</h3>
+                    </div>
                     <div>
-                      <button onClick={() => handleQuantity("add")}>
-                        <i class="las la-plus"></i>
-                      </button>
-                      <span className="px-3"> {quantity} </span>
                       <button onClick={() => handleQuantity("minus")}>
                         <i class="las la-minus"></i>
                       </button>
+                      <span className="px-3"> {quantity} </span>
+                      <button onClick={() => handleQuantity("add")}>
+                        <i class="las la-plus"></i>
+                      </button>
+                      <br></br>
+                      <button className="button-red mt-2">Add to cart</button>
                     </div>
                   </div>
                 </div>
