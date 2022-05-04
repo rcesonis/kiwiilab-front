@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Button } from "react-bootstrap";
 import { apiUrl } from "../../config/constants";
 import { Link } from "react-router-dom";
 
@@ -16,14 +17,6 @@ const FeaturedProduct = () => {
     };
     getProducts();
   }, []);
-
-  //   const featuredProduct = products.filter((product) => {
-  //     if (product.isFeatured === true) {
-  //       return product;
-  //     }
-  //   });
-
-  //   console.log(featuredProduct);
 
   return (
     <section>
@@ -60,12 +53,12 @@ const FeaturedProduct = () => {
                                 <h3>{product.price}Eur</h3>
                               </div>
                               <div className="price">
-                                <button
+                                <Button
                                   className="button-red"
                                   href={`/products/${product._id}`}
                                 >
                                   View more
-                                </button>
+                                </Button>
                               </div>
                             </div>
                           </div>

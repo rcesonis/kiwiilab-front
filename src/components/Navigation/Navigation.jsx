@@ -1,34 +1,98 @@
 import React from "react";
 import "./Navigation.scss";
-import { Container, Navbar, Nav } from "react-bootstrap";
 import logo from "../../assets/logo.png";
 const Navigation = () => {
   return (
-    <Navbar expand="lg">
-      <Container>
-        <Navbar.Brand href="/">
-          <img src={logo}></img>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll" className="justify-content-end">
-          <Nav
-            className="my-2 my-lg-0"
-            style={{ maxHeight: "100px" }}
-            navbarScroll
-          >
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/products">Shop</Nav.Link>
-            {/* <Nav.Link href="#action2">Link</Nav.Link> */}
-            {/* <Nav.Link href="#action2"> */}
-            {/* <i className="las la-shopping-cart"></i> */}
-            {/* </Nav.Link> */}
-            {/* <Nav.Link href="#action2"> */}
-            {/* <i className="las la-user-circle"></i> */}
-            {/* </Nav.Link> */}
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav className="navbar navbar-light navbar-expand-md">
+      <div className="container">
+        <a className="navbar-brand" href="/">
+          <img src={logo} />
+        </a>
+        <ul className="navbar-nav d-flex flex-row d-md-none">
+          <li className="nav-item">
+            <a className="nav-link" href="/">
+              <i className="la la-search"></i>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/">
+              <i className="la la-user"></i>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="/">
+              <i className="la la-shopping-cart"></i>
+            </a>
+          </li>
+        </ul>
+        <ul className="navbar-nav d-none d-md-flex">
+          <li className="nav-item">
+            <a className="nav-link active" href="#">
+              Shop
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              About us
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="nav-link" href="#">
+              Contact us
+            </a>
+          </li>
+        </ul>
+
+        <button
+          data-bs-toggle="collapse"
+          className="navbar-toggler nav-icon"
+          data-bs-target="#navcol-1"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navcol-1"
+        >
+          <ul className="navbar-nav d-md-none">
+            <li className="nav-item">
+              <a className="nav-link active" href="#">
+                Shop
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                About us
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                Contact us
+              </a>
+            </li>
+          </ul>
+          <ul className="navbar-nav d-none d-md-flex">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                <i className="la la-search"></i>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link active" href="#">
+                <i className="la la-user"></i>
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link active" href="#">
+                <i className="la la-shopping-cart"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 };
 

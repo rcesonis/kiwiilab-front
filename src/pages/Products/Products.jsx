@@ -18,8 +18,6 @@ const Products = () => {
     getProducts();
   }, []);
 
-  console.log(products.products);
-
   return (
     <main className="page catalog-page">
       <section className="clean-block clean-catalog dark">
@@ -59,7 +57,10 @@ const Products = () => {
                                     <h3>{product.price}Eur</h3>
                                   </div>
                                   <div className="price">
-                                    <Button href={`/products/${product._id}`}>
+                                    <Button
+                                      className="button-red"
+                                      href={`/products/${product._id}`}
+                                    >
                                       View more
                                     </Button>
                                   </div>

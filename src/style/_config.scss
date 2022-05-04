@@ -4,13 +4,17 @@
 
 
 
+// Reset
+* {
+    margin: 0;
+    padding: 0;
+}
+
 // Fonts
 $headings-font-family: "Josefin Sans",
 serif;
 
 $headings-font-family_small: "Lato";
-
-$headings-font-weight: 800;
 
 $font-family-base: "Libre Baskerville",
 serif;
@@ -27,5 +31,18 @@ $main-white: #FFF;
 $main-red: #F03F3F;
 $main-red-hover: #ec6767;
 $main-price-color: #686868;
-// Button
+
+
+// Components
+
+.btn-red {
+    background-color: $main-red;
+    width: 14rem;
+    height: 2.5rem;
+    border-radius: 0.12rem;
+    font-size: 1rem;
+    border: none;
+    color: $main-white;
+    font-family: "Lato";
+}
 
