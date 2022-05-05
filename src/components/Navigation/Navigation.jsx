@@ -1,13 +1,19 @@
 import React from "react";
 import "./Navigation.scss";
 import logo from "../../assets/logo.png";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import CartIcon from "../CartIcon/CartIcon";
+
 const Navigation = () => {
+  const quantity = useSelector((state) => state.cart.quantity);
+  console.log(quantity);
   return (
     <nav className="navbar navbar-light navbar-expand-md">
       <div className="container">
-        <a className="navbar-brand" href="/">
-          <img src={logo} />
-        </a>
+        <Link to="/" className="navbar-brand">
+          <img src={logo} alt="logo" />
+        </Link>
         <ul className="navbar-nav d-flex flex-row d-md-none">
           <li className="nav-item">
             <a className="nav-link" href="/">
@@ -20,26 +26,26 @@ const Navigation = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/">
-              <i className="la la-shopping-cart"></i>
-            </a>
+            <Link to="/cart" className="nav-link">
+              <CartIcon cartContent={quantity} />
+            </Link>
           </li>
         </ul>
         <ul className="navbar-nav d-none d-md-flex">
           <li className="nav-item">
-            <a className="nav-link active" href="#">
+            <Link to="/products" className="nav-link">
               Shop
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link to="/about-us" className="nav-link">
               About us
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link to="/contact-us" className="nav-link">
               Contact us
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -58,19 +64,19 @@ const Navigation = () => {
         >
           <ul className="navbar-nav d-md-none">
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <Link to="/products" className="nav-link">
                 Shop
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/about-us" className="nav-link">
                 About us
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link to="/contact-us" className="nav-link">
                 Contact us
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className="navbar-nav d-none d-md-flex">
@@ -80,14 +86,15 @@ const Navigation = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" href="#">
+              <a className="nav-link" href="#">
                 <i className="la la-user"></i>
               </a>
             </li>
+
             <li className="nav-item">
-              <a className="nav-link active" href="#">
-                <i className="la la-shopping-cart"></i>
-              </a>
+              <Link to="/cart" className="nav-link">
+                <CartIcon cartContent={quantity} />
+              </Link>
             </li>
           </ul>
         </div>

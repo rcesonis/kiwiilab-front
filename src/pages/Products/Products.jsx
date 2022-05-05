@@ -57,12 +57,14 @@ const Products = () => {
                                     <h3>{product.price}Eur</h3>
                                   </div>
                                   <div className="price">
-                                    <Button
-                                      className="button-red"
-                                      href={`/products/${product._id}`}
+                                    <Link
+                                      to={`/products/${product._id}`}
+                                      className="nav-link"
                                     >
-                                      View more
-                                    </Button>
+                                      <Button className="button-red">
+                                        View more
+                                      </Button>
+                                    </Link>
                                   </div>
                                 </div>
                               </div>

@@ -22,6 +22,7 @@ serif;
 
 // Font size
 $nav-link-font-size: 1rem;
+$heading-h3-default-value: 2rem;
 
 
 
@@ -42,7 +43,18 @@ $main-price-color: #686868;
     border-radius: 0.12rem;
     font-size: 1rem;
     border: none;
-    color: $main-white;
     font-family: "Lato";
+    a {
+        text-decoration: none;
+        color: $main-white;
+    }
+    a:link, a:visited {
+        text-decoration: none;
+        color: $main-white;
+    }
+
 }
 
+.product-card {
+    width: 18rem;
+}

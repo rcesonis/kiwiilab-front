@@ -1,37 +1,42 @@
 import React from "react";
-import { apiUrl } from "../../config/constants";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import "./ProductDetail.scss";
 import background from "../../assets/beard-oil.png";
+import { publicRequest } from "../../requestMethods";
+import { addProduct } from "../../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const ProductDetail = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [product, setProduct] = useState({});
-
   const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get(`${apiUrl}/products/${id}`);
+        const res = await publicRequest.get(`/products/${id}`);
+        console.log(res);
         setProduct(res.data);
       } catch {}
     };
     getProduct();
   }, [id]);
 
-  const handleQuantity = (addRemove) => {
-    if (addRemove === "minus") {
+  const handleQuantity = (type) => {
+    if (type === "dec") {
       quantity > 1 && setQuantity(quantity - 1);
     } else {
       setQuantity(quantity + 1);
     }
   };
 
-  console.log(product);
+  const handleClick = () => {
+    dispatch(addProduct({ ...product, quantity }));
+  };
+
   return (
     <main class="page product-page">
       <section class="clean-block py-5 clean-product">
@@ -40,7 +45,7 @@ const ProductDetail = () => {
             <div class="product-info">
               <div class="row">
                 <div class="col-md-6 product-image">
-                  <img class="d-block" src={product.img} />
+                  <img class="d-block" src={product.img} alt="" />
                 </div>
                 <div class="col-md-6">
                   <div class="info">
@@ -55,7 +60,7 @@ const ProductDetail = () => {
                       <h3>Quantity</h3>
                     </div>
                     <div>
-                      <button onClick={() => handleQuantity("minus")}>
+                      <button onClick={() => handleQuantity("dec")}>
                         <i class="las la-minus"></i>
                       </button>
                       <span className="px-3"> {quantity} </span>
@@ -63,7 +68,9 @@ const ProductDetail = () => {
                         <i class="las la-plus"></i>
                       </button>
                       <br></br>
-                      <button className="button-red mt-2">Add to cart</button>
+                      <button onClick={handleClick} className="button-red mt-2">
+                        Add to cart
+                      </button>
                     </div>
                   </div>
                 </div>

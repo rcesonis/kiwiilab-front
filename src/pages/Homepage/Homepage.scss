@@ -1,12 +1,11 @@
 @import "../../style/global.scss";
 
-
-
 // Hero banner
 .hero-main-container {
     padding: 0;
     margin: 0;
 }
+
 .hero-text-col {
     background-color: $main-black;
     height: auto;
@@ -14,8 +13,6 @@
     color: $main-white;
     min-height: 55vh;
 }
-
-
 
 .hero-text-col h1 {
     font-size: 4.5rem;
@@ -44,53 +41,23 @@
     padding-left: 0!important;
 }
 
+// Featured products
 
-
-
-
-
-
-
-
-
-
-
-.main-heading {
-    font-size: 4rem;
-    font-family: $headings-font-family;
-}
-
-.main-heading_small {
-    font-size: 2rem;
-    font-family: $headings-font-family_small;
-}
-
-.heading-container {
-    background-color: black;
-    height: 40rem;
-    color: $main-white;
-    width: 80rem;
-    margin-left: -12rem;
+.section-title {
+    font-size: $heading-h3-default-value;
+    font-weight: 700;
 }
 
 
 
-.heading-picture-container {
-    height: 62.5rem;
-    width: 84rem;
-    z-index: -1;
-    margin-left: -16rem;
-}
 
-.button-red {
-    background-color: $main-red!important;
-    width: 14rem;
-    height: 2.2rem;
-    color: $main-white;
-    border-radius: 0px!important;
-    font-family: $headings-font-family_small;
-}
 
-.button-red:hover {
-    background-color: $main-red-hover!important;
-}
+
+
+
+
+
+
+
+
+
