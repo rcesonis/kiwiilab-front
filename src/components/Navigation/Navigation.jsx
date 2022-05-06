@@ -81,14 +81,14 @@ const Navigation = () => {
           </ul>
           <ul className="navbar-nav d-none d-md-flex">
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <i className="la la-search"></i>
-              </a>
+              <Link to="/contact-us" className="nav-link">
+                <i className="la la-search"></i>{" "}
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
-                <i className="la la-user"></i>
-              </a>
+              <Link to="/contact-us" className="nav-link">
+                <i className="la la-user"></i>{" "}
+              </Link>
             </li>
 
             <li className="nav-item">

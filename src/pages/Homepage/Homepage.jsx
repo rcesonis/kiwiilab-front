@@ -27,7 +27,10 @@ const Homepage = () => {
                   ingridients
                 </p>
                 <button className="btn-red my-2">
-                  <a href="/products">Explore our products</a>
+                  <Link to="/products" className="navbar-brand">
+                    Explore our products
+                  </Link>
+                  ;
                 </button>
               </div>
             </div>
@@ -63,7 +66,9 @@ const Homepage = () => {
                   shaving experience.
                 </p>
                 <button className="btn-red my-2">
-                  <a href="/products">Explore our products</a>
+                  <Link to="/products" className="navbar-brand">
+                    Explore our products
+                  </Link>
                 </button>
               </div>
             </div>
@@ -86,7 +91,9 @@ const Homepage = () => {
                   ourselves
                 </h1>
                 <button className="btn-red my-2">
-                  <a href="/products">Explore our products</a>
+                  <Link to="/products" className="navbar-brand">
+                    Explore our products
+                  </Link>
                 </button>
               </div>
             </div>

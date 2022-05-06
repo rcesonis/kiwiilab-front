@@ -37,6 +37,7 @@ const FeaturedProduct = () => {
                                 <img
                                   className="img-fluid d-block mx-auto"
                                   src={product.img}
+                                  alt=""
                                 />
                               </Link>
                             </div>
@@ -75,5 +76,3 @@ const FeaturedProduct = () => {
 };
 
 export default FeaturedProduct;
-
-<div className="col-sm-12 col-md-3 text-center"></div>;
