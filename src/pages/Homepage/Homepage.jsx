@@ -125,7 +125,6 @@ const Homepage = () => {
           </div>
         </div>
       </section>
-      <Footer />
     </main>
   );
 };

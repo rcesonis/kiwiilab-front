@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "./ProductDetail.scss";
+import "../Homepage/Homepage.scss";
 import background from "../../assets/beard-oil.png";
 import { publicRequest } from "../../requestMethods";
 import { addProduct } from "../../redux/cartRedux";
@@ -51,24 +52,32 @@ const ProductDetail = () => {
                   <div class="info">
                     <h3>{product.title}</h3>
                     <div class="description-text">
-                      <p>{product.description}</p>
+                      <p className="product-description">
+                        {product.description}
+                      </p>
                     </div>
-                    <div class="price">
-                      <h3>{product.price} Eur</h3>
+                    <div class="price text-muted my-3">
+                      <h4>{product.price} Eur</h4>
                     </div>
                     <div class="quantity my-2">
-                      <h3>Quantity</h3>
+                      <h4>Quantity</h4>
                     </div>
                     <div>
-                      <button onClick={() => handleQuantity("dec")}>
+                      <button
+                        className="plus-minus"
+                        onClick={() => handleQuantity("dec")}
+                      >
                         <i class="las la-minus"></i>
                       </button>
-                      <span className="px-3"> {quantity} </span>
-                      <button onClick={() => handleQuantity("add")}>
+                      <span className="px-3 quantity-number"> {quantity} </span>
+                      <button
+                        className="plus-minus"
+                        onClick={() => handleQuantity("add")}
+                      >
                         <i class="las la-plus"></i>
                       </button>
                       <br></br>
-                      <button onClick={handleClick} className="button-red mt-2">
+                      <button onClick={handleClick} className="btn-red mt-4">
                         Add to cart
                       </button>
                     </div>
@@ -80,13 +89,13 @@ const ProductDetail = () => {
         </div>
       </section>
       <section>
-        <div className="container-fluid">
+        <div className="container-fluid padding-0">
           <div className="row g-0">
-            <div className="col-6">
-              <div className="description-container d-flex align-items-md-center justify-content-md-center">
-                <div className="text-container">
-                  <h4>Description</h4>
-                  <p>
+            <div className="col-sm-12 d-flex justify-content-center align-items-center col-md-6 hero-text-col padding-0">
+              <div className="d-flex justify-content-center align-items-center">
+                <div className="text-center p-5">
+                  <h4 className="text-center">Description</h4>
+                  <p className="mx-auto">
                     Kiwiilab is an exclusive brand of men's grooming and care
                     products. The products are designed not only to take care of
                     your hair, but also to take care of your scalp and body. The
@@ -94,21 +103,18 @@ const ProductDetail = () => {
                     teenagers to adults, with a refined scent for all ages. The
                     Kiwiilab brand is characterized by the fact that the
                     products are not tested on animals and do not contain
-                    alcohol, parabens, silicon, gluten or dyes. Also, these
-                    cosmetics are suitable for vegans. It is made using only the
-                    usual botanical extracts, which enhance the effect of the
-                    measures and give the desired end result.
+                    alcohol, parabens, silicon, gluten or dyes.
                   </p>
-                  <h4>How to use it</h4>
-                  <p>
+                  <h4 className="mx-auto">How to use it</h4>
+                  <p className="mx-auto">
                     Warm 3 drops of oil in your hand, apply to beard hair,
                     mustache and comb them.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="col-6">
-              <img src={background} />
+            <div className="col-sm-12 d-flex justify-content-center align-items-center col-md-6 hero-text-col padding-0">
+              <img className="img-fluid" src={background} />
             </div>
           </div>
         </div>

@@ -20,14 +20,17 @@ const Products = () => {
 
   return (
     <main className="page catalog-page">
-      <section className="clean-block clean-catalog dark">
-        <div className="container">
-          <div className="block-heading">
-            <h2 className="text-info">Catalog Page</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam
-              urna, dignissim nec auctor in, mattis vitae leo.
-            </p>
+      <section className="clean-block">
+        <div className="container pt-3 vh-100">
+          <div className="row pb-5">
+            <div className="col-sm-12 text-center">
+              <h1 className="p-3">Catalog</h1>
+              <h4 className="catalog-description">
+                Beards have a reputation for ruggedness, but no matter if yours
+                is long and rugged or close-cropped and classic, it’s sure to
+                benefit from a solid grooming routine and high-quality products.
+              </h4>
+            </div>
           </div>
           <div className="content">
             <div className="row">
@@ -61,9 +64,9 @@ const Products = () => {
                                       to={`/products/${product._id}`}
                                       className="nav-link"
                                     >
-                                      <Button className="button-red">
+                                      <button className="btn-red">
                                         View more
-                                      </Button>
+                                      </button>
                                     </Link>
                                   </div>
                                 </div>

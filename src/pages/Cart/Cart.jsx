@@ -33,12 +33,15 @@ const Cart = () => {
     <main className="page shopping-cart-page">
       <section className="clean-block clean-cart dark">
         <div className="container">
-          <div className="block-heading">
-            <h2 className="text-info">Shopping Cart</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam
-              urna, dignissim nec auctor in, mattis vitae leo.
-            </p>
+          <div className="row">
+            <div className="col-sm-12 text-center py-5">
+              <h1 className="p-3">Cart</h1>
+              <h4 className="catalog-description">
+                Beards have a reputation for ruggedness, but no matter if yours
+                is long and rugged or close-cropped and classic, it’s sure to
+                benefit from a solid grooming routine and high-quality products.
+              </h4>
+            </div>
           </div>
           <div className="content">
             <div className="row g-0">
@@ -46,7 +49,7 @@ const Cart = () => {
                 <div className="items">
                   {cart.products.map((product) => {
                     return (
-                      <div className="product">
+                      <div className="product py-5">
                         <div className="row justify-content-center align-items-center">
                           <div className="col-md-3">
                             <div className="product-image">
@@ -72,18 +75,8 @@ const Cart = () => {
                             </div>
                           </div>
                           <div className="col-6 col-md-2 quantity">
-                            <label
-                              className="form-label d-none d-md-block"
-                              for="quantity"
-                            >
-                              Quantity
-                            </label>
-                            <input
-                              id="number"
-                              className="form-control quantity-input"
-                              type="number"
-                              value={product.quantity}
-                            />
+                            Qty:
+                            <span> {product.quantity}</span>
                           </div>
                           <div className="col-6 col-md-2 price">
                             <span>{product.price * product.quantity}</span>
@@ -94,9 +87,9 @@ const Cart = () => {
                   })}
                 </div>
               </div>
-              <div className="col-md-12 col-lg-4">
+              <div className="col-md-12 col-lg-4 p-5">
                 <div className="summary">
-                  <h3>Cart Total</h3>
+                  <h3>Cart Total:</h3>
 
                   <h4>
                     <p className="text">Shipping: 25 Eur*</p>
@@ -125,7 +118,7 @@ const Cart = () => {
                     </button>
                   </StripeCheckout>
 
-                  <p className="text-muted">
+                  <p className="text-muted conditions-text">
                     *Shipping price is fixed up to 20kg of product weight.
                   </p>
                 </div>

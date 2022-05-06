@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navigation from "./components/Navigation/Navigation";
+import Footer from "./components/Footer/Footer";
 import Homepage from "./pages/Homepage/Homepage";
 import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
@@ -28,6 +29,7 @@ function App() {
         <Route path="/pay" element={<Pay />} />
         <Route path="/success" element={<Success />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
