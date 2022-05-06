@@ -28,7 +28,7 @@ const Cart = () => {
     };
     stripeToken && cart.total >= 1 && makeRequest();
   }, [stripeToken, cart.total, navigate]);
-
+  console.log(res);
   return (
     <main className="page shopping-cart-page">
       <section className="clean-block clean-cart dark">

@@ -114,7 +114,7 @@ const ProductDetail = () => {
               </div>
             </div>
             <div className="col-sm-12 d-flex justify-content-center align-items-center col-md-6 hero-text-col padding-0">
-              <img className="img-fluid" src={background} />
+              <img className="img-fluid" src={background} alt="" />
             </div>
           </div>
         </div>

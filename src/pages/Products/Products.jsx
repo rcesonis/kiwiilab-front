@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { Button } from "react-bootstrap";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -48,6 +47,7 @@ const Products = () => {
                                     <img
                                       className="img-fluid d-block mx-auto"
                                       src={product.img}
+                                      alt=""
                                     />
                                   </Link>
                                 </div>
