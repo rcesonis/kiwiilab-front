@@ -6,7 +6,6 @@ import SignUp from "./pages/SignUp/SignUp";
 import SignIn from "./pages/SignIn/SignIn";
 import Products from "./pages/Products/Products";
 import ProductDetail from "./pages/ProductDetail/ProductDetail";
-import Pay from "./pages/Pay/Pay";
 import Cart from "./pages/Cart/Cart";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Success from "./pages/Success/Success";
