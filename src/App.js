@@ -26,7 +26,6 @@ function App() {
           element={user ? <Navigate to="/signup" /> : <SignIn />}
         />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/pay" element={<Pay />} />
         <Route path="/success" element={<Success />} />
       </Routes>
       <Footer />
