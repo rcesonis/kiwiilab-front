@@ -29,7 +29,7 @@ const Pay = () => {
   }, [stripeToken]);
   return (
     <div>
-      <StripeCheckout
+      {/* <StripeCheckout
         name="KiwiLab"
         billingAddress
         shippingAddress
@@ -39,7 +39,7 @@ const Pay = () => {
         description={""}
       >
         <button>Pay now</button>
-      </StripeCheckout>
+      </StripeCheckout> */}
     </div>
   );
 };

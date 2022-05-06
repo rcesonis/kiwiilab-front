@@ -10,6 +10,11 @@
     padding: 0;
 }
 
+.padding-0 {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+}
+
 // Fonts
 $headings-font-family: "Josefin Sans",
 serif;
@@ -23,6 +28,7 @@ serif;
 // Font size
 $nav-link-font-size: 1rem;
 $heading-h3-default-value: 2rem;
+$product-title-size: 1.5rem;
 
 
 
@@ -44,6 +50,7 @@ $main-price-color: #686868;
     font-size: 1rem;
     border: none;
     font-family: "Lato";
+    color: $main-white;
     a {
         text-decoration: none;
         color: $main-white;

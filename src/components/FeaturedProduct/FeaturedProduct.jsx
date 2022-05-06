@@ -4,6 +4,7 @@ import axios from "axios";
 import { Button } from "react-bootstrap";
 import { apiUrl } from "../../config/constants";
 import { Link } from "react-router-dom";
+import "./FeaturedProduct.scss";
 
 const FeaturedProduct = () => {
   const [products, setProducts] = useState([]);
@@ -24,11 +25,7 @@ const FeaturedProduct = () => {
         <div className="row">
           <div className="col-md-12">
             <div className="products">
-              <div className="row g-0 pt-5">
-                <div className="col-12 pt-5 text-center">
-                  <h2>Featured products</h2>
-                </div>
-              </div>
+              <div className="row g-0 pt-3"></div>
               <div className="row g-0">
                 {!products.products
                   ? "Loading"
@@ -36,29 +33,33 @@ const FeaturedProduct = () => {
                       return (
                         <div className="col-12 col-md-6 col-lg-4">
                           <div className="clean-product-item">
-                            <div className="image">
-                              <Link to="#">
+                            <div className="image my-2">
+                              <Link to={`/products/${product._id}`}>
                                 <img
                                   className="img-fluid d-block mx-auto"
                                   src={product.img}
                                 />
                               </Link>
-                              <a href="#"></a>
                             </div>
                             <div className="product-name text-center">
-                              <a href="#">{product.title}</a>
+                              <Link
+                                to={`/products/${product._id}`}
+                                className="nav-link"
+                              >
+                                {product.title}
+                              </Link>
                             </div>
-                            <div className="about text-center">
+                            <div className="about text-center my-2">
                               <div className="price">
                                 <h3>{product.price}Eur</h3>
                               </div>
-                              <div className="price">
-                                <Button
-                                  className="button-red"
-                                  href={`/products/${product._id}`}
+                              <div className="price my-2">
+                                <Link
+                                  to={`/products/${product._id}`}
+                                  className="nav-link"
                                 >
-                                  View more
-                                </Button>
+                                  <button className="btn-red">View more</button>
+                                </Link>
                               </div>
                             </div>
                           </div>
@@ -75,3 +76,5 @@ const FeaturedProduct = () => {
 };
 
 export default FeaturedProduct;
+
+<div className="col-sm-12 col-md-3 text-center"></div>;

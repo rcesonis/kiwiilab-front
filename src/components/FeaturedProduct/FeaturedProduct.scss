@@ -1,1 +1,15 @@
 @import "../../style/global.scss";
+
+.product-name a {
+    font-size: $product-title-size;
+    text-decoration: none;
+    color: $main-black;
+    font-family: "Lato";
+    font-weight: 700;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: $main-black;
+}

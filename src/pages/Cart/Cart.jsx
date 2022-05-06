@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import StripeCheckout from "react-stripe-checkout";
+import { userRequest } from "../../requestMethods";
+import "./Cart.scss";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Cart = () => {
   const cart = useSelector((state) => state.cart);
+  const [stripeToken, setStripeToken] = useState(null);
+  const navigate = useNavigate();
 
-  console.log(cart);
+  const onToken = (token) => {
+    setStripeToken(token);
+  };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/payment", {
+          tokenId: stripeToken.id,
+          amount: cart.total * 100,
+        });
+        navigate("/success");
+      } catch {}
+    };
+    stripeToken && cart.total >= 1 && makeRequest();
+  }, [stripeToken, cart.total, navigate]);
 
   return (
     <main className="page shopping-cart-page">
@@ -86,12 +105,26 @@ const Cart = () => {
                       {(Math.round(cart.total * 100) / 100 + 25).toFixed(2)} Eur
                     </span>
                   </h4>
-                  <button
-                    className="btn btn-primary btn-lg d-block w-100 mb-2"
-                    type="button"
+                  <StripeCheckout
+                    name="KiwiLab"
+                    billingAddress
+                    shippingAddress
+                    amount={(
+                      Math.round((cart.total * 100) / 100 + 25) * 100
+                    ).toFixed(2)}
+                    token={onToken}
+                    stripeKey={KEY}
+                    description={`Total is ${(
+                      Math.round(cart.total * 100) / 100 +
+                      25
+                    ).toFixed(2)}Eur`}
+                    currency="EUR"
                   >
-                    Checkout
-                  </button>
+                    <button className="btn-red" type="button">
+                      Checkout
+                    </button>
+                  </StripeCheckout>
+
                   <p className="text-muted">
                     *Shipping price is fixed up to 20kg of product weight.
                   </p>

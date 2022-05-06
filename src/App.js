@@ -8,6 +8,7 @@ import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import Pay from "./pages/Pay/Pay";
 import Cart from "./pages/Cart/Cart";
 import { Routes, Route, Navigate } from "react-router-dom";
+import Success from "./pages/Success/Success";
 
 function App() {
   const user = true;
@@ -19,14 +20,13 @@ function App() {
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetail />} />
         <Route path="/cart" element={<Cart />} />
-
         <Route
           path="/signin"
           element={user ? <Navigate to="/signup" /> : <SignIn />}
         />
-
         <Route path="/signup" element={<SignUp />} />
         <Route path="/pay" element={<Pay />} />
+        <Route path="/success" element={<Success />} />
       </Routes>
     </div>
   );
