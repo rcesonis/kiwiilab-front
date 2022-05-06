@@ -23,7 +23,10 @@ const Cart = () => {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
-        navigate("/success");
+        navigate("/success", {
+          stripeData: response.data,
+          products: cart,
+        });
       } catch {}
     };
     stripeToken && cart.total >= 1 && makeRequest();
