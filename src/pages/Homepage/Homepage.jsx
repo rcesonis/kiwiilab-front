@@ -3,7 +3,7 @@ import "./Homepage.scss";
 import background from "../../assets/hero-banner-picture.png";
 import background1 from "../../assets/background1.png";
 import story from "../../assets/story.png";
-
+import { Link } from "react-router-dom";
 import insta1 from "../../assets/insta1.png";
 import insta2 from "../../assets/insta2.png";
 import insta3 from "../../assets/insta3.png";
@@ -11,7 +11,6 @@ import insta4 from "../../assets/insta4.png";
 
 import FeaturedProduct from "../../components/FeaturedProduct/FeaturedProduct";
 import VideoComponent from "../../components/VideoComponent/VideoComponent";
-import Footer from "../../components/Footer/Footer";
 
 const Homepage = () => {
   return (
