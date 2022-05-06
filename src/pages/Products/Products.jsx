@@ -19,9 +19,9 @@ const Products = () => {
   }, []);
 
   return (
-    <main className="page catalog-page">
+    <main className="page catalog-page pb-5 mb-2">
       <section className="clean-block">
-        <div className="container pt-3 vh-100">
+        <div className="container pt-3">
           <div className="row pb-5">
             <div className="col-sm-12 text-center">
               <h1 className="p-3">Catalog</h1>
@@ -50,14 +50,18 @@ const Products = () => {
                                       src={product.img}
                                     />
                                   </Link>
-                                  <a href="#"></a>
                                 </div>
                                 <div className="product-name text-center">
-                                  <a href="#">{product.title}</a>
+                                  <Link
+                                    to={`/products/${product._id}`}
+                                    className="nav-link"
+                                  >
+                                    {product.title}
+                                  </Link>
                                 </div>
                                 <div className="about text-center">
                                   <div className="price">
-                                    <h3>{product.price}Eur</h3>
+                                    <h3 className="mx-3">{product.price}Eur</h3>
                                   </div>
                                   <div className="price">
                                     <Link
