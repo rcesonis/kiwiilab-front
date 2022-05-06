@@ -19,7 +19,7 @@ const Cart = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await userRequest.post("/payment", {
+        const response = await userRequest.post("/payment", {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
@@ -28,7 +28,6 @@ const Cart = () => {
     };
     stripeToken && cart.total >= 1 && makeRequest();
   }, [stripeToken, cart.total, navigate]);
-  console.log(res);
   return (
     <main className="page shopping-cart-page">
       <section className="clean-block clean-cart dark">
